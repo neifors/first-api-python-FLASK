@@ -6,15 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-click = "==7.1.2"
-itsdangerous = "==1.1.0"
-pymongo = "==3.11.0"
-six = "==1.15.0"
-Flask = "==1.1.2"
-Flask-Cors = "==3.0.9"
-Jinja2 = "==2.11.2"
-MarkupSafe = "==1.1.1"
-Werkzeug = "==1.0.1"
+flask = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.7"
