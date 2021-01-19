@@ -38,4 +38,5 @@ def handle_404(err):
 def handle_400(err):
     return {'message': f'Oops! {err}'}, 400
 
-server.run(debug=True)
+if __name__ == "__main__":
+    server.run(debug=True)
