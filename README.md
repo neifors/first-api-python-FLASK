@@ -5,8 +5,8 @@
 1. Create a Flask API
    - You can choose what it does!
    - Your API should respond to at least one GET and one POST request
-   - Add at least one extension eg. a database connection or an email service
    - Follow documentation to add some tests using [pytest](https://pytest-flask.readthedocs.io/en/latest/features.html)
+   - Research and start implementation of at least one extension or additional feature eg. a database connection, an email service, deployment
 
 2. Prepare a short (3-5 minute) demonstration of your new API
     - Focus on demonstrating your API's functionality
@@ -21,8 +21,8 @@
 - Run tests with `pipenv run test`
 - Get coverage report with `pipenv run coverage`
 
-Available routes:
-`GET`, `POST`: `/api/cats`
+Available routes: \
+`GET`, `POST`: `/api/cats` \
 `GET`, `PATCH`, `PUT` ,`DELETE`: `/api/cats/:id`
 
 --
