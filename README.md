@@ -1,5 +1,5 @@
 ### Study Notes
-[Python as a Backend: Flask](https://github.com/getfutureproof/fp_guides_wiki/wiki/Flask)
+| [Python as a Backend: Flask](https://github.com/getfutureproof/fp_guides_wiki/wiki/Flask) | [Testing with Pytest](https://github.com/getfutureproof/fp_guides_wiki/wiki/Testing-with-Pytest) |
 
 # Exercises
 1. Create a Flask API
