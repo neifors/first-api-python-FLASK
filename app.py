@@ -3,14 +3,14 @@ from flask_cors import CORS
 from controllers import cats
 from werkzeug import exceptions
 
-server = Flask(__name__)
-CORS(server)
+app = Flask(__name__)
+CORS(app)
 
-@server.route('/')
+@app.route('/')
 def home():
     return jsonify({'message': 'Hello from Flask!'}), 200
 
-@server.route('/api/cats', methods=['GET', 'POST'])
+@app.route('/api/cats', methods=['GET', 'POST'])
 def cats_handler():
     fns = {
         'GET': cats.index,
@@ -19,7 +19,7 @@ def cats_handler():
     resp, code = fns[request.method](request)
     return jsonify(resp), code
 
-@server.route('/api/cats/<int:cat_id>', methods=['GET', 'PATCH', 'PUT', 'DELETE'])
+@app.route('/api/cats/<int:cat_id>', methods=['GET', 'PATCH', 'PUT', 'DELETE'])
 def cat_handler(cat_id):
     fns = {
         'GET': cats.show,
@@ -30,13 +30,17 @@ def cat_handler(cat_id):
     resp, code = fns[request.method](request, cat_id)
     return jsonify(resp), code
 
-@server.errorhandler(exceptions.NotFound)
+@app.errorhandler(exceptions.NotFound)
 def handle_404(err):
     return {'message': f'Oops! {err}'}, 404
 
-@server.errorhandler(exceptions.BadRequest)
+@app.errorhandler(exceptions.BadRequest)
 def handle_400(err):
     return {'message': f'Oops! {err}'}, 400
 
+@app.errorhandler(exceptions.InternalServerError)
+def handle_500(err):
+    return {'message': f"It's not you, it's us"}, 500
+
 if __name__ == "__main__":
-    server.run(debug=True)
+    app.run(debug=True)

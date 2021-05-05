@@ -14,13 +14,20 @@
 
 # Run Demo
 
-- `cd flask-demo` 
-- `pipenv install -r requirements.txt`
 - `pipenv shell`
-- Tell terminal which application to work with:
-   - `export FLASK_APP=server.py` _(Linux/MacOS/GitBash)_ 
-   - `set FLASK_APP=server.py` _(Windows Command Prompt)_ 
-   - `$env:FLASK_APP = "server.py"` _(PowerShell)_
+- `pipenv install`
+- Run dev server with `pipenv run dev`
+- Run prod server with `pipenv run start`
+- Run tests with `pipenv run test`
+- Get coverage report with `pipenv run coverage`
+
+Available routes:
+`GET`, `POST`: `/api/cats`
+`GET`, `PATCH`, `PUT` ,`DELETE`: `/api/cats/:id`
+
+--
+
+**If you are having issues with the dev script, start your server with the following**
 - Tell terminal which environment to work in:
    - `export FLASK_ENV=development` _(Linux/MacOS/GitBash)_ 
    - `set FLASK_ENV=development` _(Windows Command Prompt)_ 
