@@ -14,8 +14,9 @@
 
 # Run Demo
 
+_NB: These instructions assume you have Pipenv installed within your current version of Python. For non-Pipenv users, a `requirements.txt` is provided, including dev dependencies._
 - `pipenv shell`
-- `pipenv install`
+- `pipenv install --dev`
 - Run dev server with `pipenv run dev`
 - Run prod server with `pipenv run start`
 - Run tests with `pipenv run test`
