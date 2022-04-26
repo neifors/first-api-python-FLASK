@@ -1,13 +1,13 @@
 import pytest
 import app
-from controllers import cats
+from controllers import films
 
 @pytest.fixture
 def api(monkeypatch):
-    test_cats = [
-        {'id': 1, 'name': 'Test Cat 1', 'age': 7},
-        {'id': 2, 'name': 'Test Cat 2', 'age': 4}
+    test_films = [
+        {'id': 1, 'name': 'Test Film 1', 'year': 7},
+        {'id': 2, 'name': 'Test Film 2', 'year': 4}
     ]
-    monkeypatch.setattr(cats, "cats", test_cats)
+    monkeypatch.setattr(films, "films", test_films)
     api = app.app.test_client()
     return api

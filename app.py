@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from controllers import cats
+from controllers import films
 from werkzeug import exceptions
 
 app = Flask(__name__)
@@ -10,24 +10,24 @@ CORS(app)
 def home():
     return jsonify({'message': 'Hello from Flask!'}), 200
 
-@app.route('/api/cats', methods=['GET', 'POST'])
+@app.route('/api/films', methods=['GET', 'POST'])
 def cats_handler():
     fns = {
-        'GET': cats.index,
-        'POST': cats.create
+        'GET': films.index,
+        'POST': films.create
     }
     resp, code = fns[request.method](request)
     return jsonify(resp), code
 
-@app.route('/api/cats/<int:cat_id>', methods=['GET', 'PATCH', 'PUT', 'DELETE'])
-def cat_handler(cat_id):
+@app.route('/api/films/<int:film_id>', methods=['GET', 'PATCH', 'PUT', 'DELETE'])
+def cat_handler(film_id):
     fns = {
-        'GET': cats.show,
-        'PATCH': cats.update,
-        'PUT': cats.update,
-        'DELETE': cats.destroy
+        'GET': films.show,
+        'PATCH': films.update,
+        'PUT': films.update,
+        'DELETE': films.destroy
     }
-    resp, code = fns[request.method](request, cat_id)
+    resp, code = fns[request.method](request, film_id)
     return jsonify(resp), code
 
 @app.errorhandler(exceptions.NotFound)
