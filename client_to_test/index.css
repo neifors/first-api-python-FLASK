@@ -1,0 +1,12 @@
+div#wrapper {
+   display: flex;
+   justify-content: space-between;
+
+}
+
+div#more-info {
+   float: right;
+   text-align: center;
+   max-width: 600px;
+   margin-right: 200px;
+}

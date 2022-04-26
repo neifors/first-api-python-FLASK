@@ -10,6 +10,10 @@ CORS(app)
 def home():
    return render_template("./index.html")
 
+@app.route('/index.css')
+def style():
+   return render_template("./index.css")
+
 @app.route('/api/films', methods=['GET', 'POST'])
 def cats_handler():
     fns = {

@@ -4,10 +4,42 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./index.css">
    <title>Films API</title>
 </head>
 <body>
    <h1>WELCOME TO OUR FIRST API</h1>
    <img src="https://as2.ftcdn.net/v2/jpg/03/41/47/73/1000_F_341477352_FPoRvWnWWqdzVFnIWn3on34gYWaSEX2K.jpg" alt="welcome">
+
+   <table>
+      <tr>
+         <th>Operation</th>
+         <th>Description</th>
+         <th>Method</th>
+         <th>Request Body Expected</th>
+         <th>Example</th>
+      </tr>
+      <tr>
+         <td>To obtain local films</td>
+         <td class="route">/api/films</td>
+         <td class="method">GET</td>
+         <td class="body"> N/A </td>
+         <td class="example">http://127.0.0.1:5000/api/films</td>
+      </tr>
+      <tr>
+         <td>To obtain data set with a specific id</td>
+         <td class="route">/api/films/<strong>film_id</strong></td>
+         <td class="method">GET</td>
+         <td class="body"> N/A </td>
+         <td class="example">http://127.0.0.1:5000/api/films/<strong>3</strong></td>
+      </tr>
+      <tr>
+         <td>To obtain films from another API</td>
+         <td class="route"><strong>/outside</strong>/api/films/</td>
+         <td class="method">GET</td>
+         <td class="body"> N/A </td>
+         <td class="example">http://127.0.0.1:5000<strong>/outside</strong>/api/films/users/</td>
+      </tr>
+
 </body>
 </html>
