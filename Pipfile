@@ -7,6 +7,9 @@ name = "pypi"
 flask = "*"
 gunicorn = "*"
 flask-cors = "*"
+werkzeug = "*"
+bs4 = "*"
+requests = "*"
 
 [dev-packages]
 pytest = "*"
